@@ -19,5 +19,86 @@ import '../styles/custom.css';
     <main class="w-full max-w-[430px] min-h-screen shadow-2xl relative overflow-hidden flex flex-col paper-texture">
       <slot />
     </main>
+
+    <!-- Música de fondo -->
+    <audio id="bg-music" loop preload="auto">
+      <source src="/music/Carlos-Rivera-te-esperaba.mp3" type="audio/mpeg" />
+    </audio>
+
+    <!-- Botón flotante música -->
+    <button
+      id="music-btn"
+      aria-label="Música"
+      style="
+        position: fixed;
+        bottom: 1.5rem;
+        right: 1.5rem;
+        z-index: 50;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 50%;
+        background: linear-gradient(135deg, #c8a355, #9a7320);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 4px 14px rgba(184,148,42,0.45);
+        transition: transform 0.2s, opacity 0.3s;
+        opacity: 0.85;
+      "
+    >
+      <svg id="icon-play" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18" height="18">
+        <path d="M8 5v14l11-7z"/>
+      </svg>
+      <svg id="icon-pause" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="18" height="18" style="display:none">
+        <path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>
+      </svg>
+    </button>
+
+    <style>
+      @keyframes music-pulse {
+        0%, 100% { box-shadow: 0 4px 14px rgba(184,148,42,0.45); }
+        50%       { box-shadow: 0 4px 22px rgba(184,148,42,0.75); }
+      }
+      #music-btn.playing {
+        animation: music-pulse 2s ease-in-out infinite;
+        opacity: 1;
+      }
+      #music-btn:hover { transform: scale(1.1); opacity: 1; }
+    </style>
+
+    <script is:inline>
+      (function () {
+        // Evitar doble ejecución (HMR de Astro dev o cualquier otra causa)
+        if (window.__bgMusicReady) return;
+        window.__bgMusicReady = true;
+
+        const audio     = document.getElementById('bg-music');
+        const btn       = document.getElementById('music-btn');
+        const iconPlay  = document.getElementById('icon-play');
+        const iconPause = document.getElementById('icon-pause');
+
+        function setPlaying(on) {
+          iconPlay.style.display  = on ? 'none' : '';
+          iconPause.style.display = on ? ''     : 'none';
+          btn.classList.toggle('playing', on);
+          btn.setAttribute('aria-label', on ? 'Pausar música' : 'Reproducir música');
+        }
+
+        audio.play()
+          .then(() => setPlaying(true))
+          .catch(() => setPlaying(false));
+
+        btn.addEventListener('click', () => {
+          if (audio.paused) {
+            audio.play().then(() => setPlaying(true));
+          } else {
+            audio.pause();
+            setPlaying(false);
+          }
+        });
+      })();
+    </script>
   </body>
 </html>
