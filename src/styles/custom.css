@@ -1,0 +1,57 @@
+/* Typography overrides with letter-spacing for Cinzel */
+.font-cinzel {
+  letter-spacing: 0.12em;
+}
+
+/* Body base */
+body {
+  background-color: #EBF2F7;
+  color: #372E2C;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Arch cutout styling */
+.arch-frame {
+  border-radius: 180px 180px 18px 18px;
+}
+.arch-inner {
+  border-radius: 174px 174px 14px 14px;
+}
+
+/* Soft pastel background */
+.paper-texture {
+  background-color: #F7F3FA;
+}
+
+/* Gold foil double-border */
+.gold-foil-border {
+  border: 1px solid rgba(200, 163, 85, 0.45);
+  position: relative;
+}
+.gold-foil-border::after {
+  content: '';
+  position: absolute;
+  inset: 3px;
+  border: 1px solid rgba(200, 163, 85, 0.2);
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+/* Pulsing glow for music button */
+@keyframes subtlePulse {
+  0%, 100% { transform: scale(1); opacity: 0.9; }
+  50% { transform: scale(1.04); opacity: 1; }
+}
+.music-pulse {
+  animation: subtlePulse 2.8s infinite ease-in-out;
+}
+
+/* Slow bounce down for scroll prompt */
+@keyframes bounceDown {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(6px); }
+  60% { transform: translateY(3px); }
+}
+.animate-bounce-slow {
+  animation: bounceDown 2.2s infinite;
+}

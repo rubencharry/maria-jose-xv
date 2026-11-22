@@ -1,0 +1,42 @@
+---
+interface Props {
+  variant?: 'horizontal' | 'corners';
+  flip?: boolean;
+}
+const { variant = 'horizontal', flip = false } = Astro.props;
+---
+
+<div class="w-full relative z-20 pointer-events-none select-none" aria-hidden="true">
+
+  {variant === 'horizontal' && (
+    <img
+      src="/flores/flor-horizontal.webp"
+      alt=""
+      class:list={[
+        "w-full h-auto -my-5",
+        flip && "[transform:scaleY(-1)]"
+      ]}
+      loading="lazy"
+    />
+  )}
+
+  {variant === 'corners' && (
+    <div class="relative w-full overflow-visible" style="height:0;">
+      <img
+        src="/flores/flor-esquina-inferior.webp"
+        alt=""
+        class="absolute -left-2 w-[34%] h-auto"
+        style="bottom:6px;"
+        loading="lazy"
+      />
+      <img
+        src="/flores/flor-esquina-inferior.webp"
+        alt=""
+        class="absolute -right-2 w-[34%] h-auto [transform:scaleX(-1)]"
+        style="bottom:6px;"
+        loading="lazy"
+      />
+    </div>
+  )}
+
+</div>

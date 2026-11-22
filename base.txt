@@ -1,0 +1,575 @@
+<!DOCTYPE html><html class="scroll-smooth" lang="es"><head>
+<meta charset="utf-8">
+<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
+<title>Mis XV Años | Maria José</title>
+<!-- Tailwind CSS v3 with Plugins -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Google Fonts: Great Vibes, Cormorant Garamond, Cinzel, Montserrat -->
+<link href="https://fonts.googleapis.com" rel="preconnect">
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect">
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&amp;family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,400&amp;family=Great+Vibes&amp;family=Montserrat:wght@300;400;500;600&amp;display=swap" rel="stylesheet">
+<!-- Tailwind Custom Configuration -->
+<script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'powder-blue': {
+              50: '#F2F8FB',
+              100: '#E1EEF6',
+              200: '#C7E0EE',
+              300: '#A3CCE3',
+              400: '#7EAFD4',
+              500: '#5F96C4',
+            },
+            'gold': {
+              300: '#EBD8A0',
+              400: '#DFC27C',
+              500: '#C8A355',
+              600: '#B0883B',
+              700: '#8A6827'
+            },
+            'sand-cream': '#FDFAF7',
+            'deep-charcoal': '#372E2C',
+            'muted-slate': '#5C6A72'
+          },
+          fontFamily: {
+            'script': ['"Great Vibes"', 'cursive'],
+            'cinzel': ['Cinzel', 'serif'],
+            'cormorant': ['"Cormorant Garamond"', 'serif'],
+            'sans': ['Montserrat', 'sans-serif'],
+          },
+          boxShadow: {
+            'soft-card': '0 10px 30px -5px rgba(126, 175, 212, 0.15), 0 4px 10px -2px rgba(0, 0, 0, 0.03)',
+            'gold-glow': '0 4px 20px -2px rgba(200, 163, 85, 0.25)',
+          }
+        }
+      }
+    }
+  </script>
+<!-- BEGIN: Custom CSS Styles -->
+<style data-purpose="typography">
+    .font-script {
+      font-family: 'Great Vibes', cursive;
+    }
+    .font-cinzel {
+      font-family: 'Cinzel', serif;
+      letter-spacing: 0.12em;
+    }
+    .font-cormorant {
+      font-family: 'Cormorant Garamond', serif;
+    }
+  </style>
+<style data-purpose="layout">
+    body {
+      background-color: #EBF2F7;
+      color: #372E2C;
+      font-family: 'Montserrat', sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+    /* Arch cutout styling for classic luxury invitation look */
+    .arch-frame {
+      border-radius: 180px 180px 18px 18px;
+    }
+    .arch-inner {
+      border-radius: 174px 174px 14px 14px;
+    }
+    /* Delicate paper texture overlay */
+    .paper-texture {
+      background-color: #FDFAF7;
+      background-image: radial-gradient(#F0E9DF 0.75px, transparent 0.75px);
+      background-size: 16px 16px;
+    }
+  </style>
+<style data-purpose="decorations">
+    .gold-foil-border {
+      border: 1px solid rgba(200, 163, 85, 0.45);
+      position: relative;
+    }
+    .gold-foil-border::after {
+      content: '';
+      position: absolute;
+      inset: 3px;
+      border: 1px solid rgba(200, 163, 85, 0.2);
+      pointer-events: none;
+      border-radius: inherit;
+    }
+    /* Custom pulsing glow */
+    @keyframes subtlePulse {
+      0%, 100% { transform: scale(1); opacity: 0.9; }
+      50% { transform: scale(1.04); opacity: 1; }
+    }
+    .music-pulse {
+      animation: subtlePulse 2.8s infinite ease-in-out;
+    }
+    @keyframes bounceDown {
+      0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+      40% { transform: translateY(6px); }
+      60% { transform: translateY(3px); }
+    }
+    .animate-bounce-slow {
+      animation: bounceDown 2.2s infinite;
+    }
+  </style>
+<!-- END: Custom CSS Styles -->
+</head>
+<body class="flex justify-center min-h-screen py-0 md:py-8 selection:bg-powder-blue-200">
+<!-- Mobile Container Wrapper: 430px wide max for authentic iOS mobile invitation format -->
+<main class="w-full max-w-[430px] bg-sand-cream min-h-screen shadow-2xl relative overflow-hidden flex flex-col paper-texture border-x border-powder-blue-200/40">
+<!-- BEGIN: Full-Bleed Hero Section (Inspired by Reference IMAGE_1) -->
+<section class="relative w-full h-[95vh] min-h-[640px] max-h-[860px] overflow-hidden flex flex-col justify-between" data-purpose="hero-cover">
+<!-- Full-bleed background photo using IMAGE_4 -->
+<img alt="Maria José XV Años" class="absolute inset-0 w-full h-full object-cover object-[center_28%]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAoXSWDJUNT08sBRLV6V8figsT2aRdwrD1medObnUwOnDWiTfISJyT4BXtagRNqWCQLc_T8UqQ--0Eh3j9warjjzSkVrGo-j5ILsLevdh7ACKCRx3GxDIdmzRC-dvks-bIWZHpIyN9APyYg8TEeUU2wPbIT3kWa5Fr3v9t5TU5IAYQaLsTlvmexwra76t4ARhTDtkbNPalb1F0Q3dD2_qRLYD5xnCaomKJCe-FkK5wSOWvMu060l2s">
+<!-- Elegant multi-layer overlay for contrast and dreamy celebration tone -->
+<div class="absolute inset-0 bg-gradient-to-b from-black/45 via-black/15 to-sand-cream/95 pointer-events-none"></div>
+<div class="absolute inset-0 bg-powder-blue-900/10 mix-blend-multiply pointer-events-none"></div>
+<!-- Top Glassmorphic Ambient Music Pill -->
+
+<!-- Center Floating Delicate Phrase -->
+<div class="relative z-10 px-6 text-center my-auto pt-8"><!-- Golden / White Crown Accent -->
+<div class="mb-1 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+<svg class="w-7 h-7 mx-auto" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24">
+<path d="M3 18h18M4 14l3.5-7 4.5 5 4.5-5 3.5 7H4z"></path>
+<circle cx="12" cy="7" fill="currentColor" r="1"></circle>
+<circle cx="4" cy="14" fill="currentColor" r="1"></circle>
+<circle cx="20" cy="14" fill="currentColor" r="1"></circle>
+</svg>
+</div>
+<!-- Subtitle: Nuestra Quinceañera -->
+<p class="font-cinzel text-xs text-white font-bold tracking-[0.3em] uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+      Nuestra Quinceañera
+    </p>
+<!-- Quinceañera Name -->
+<h1 class="font-script text-7xl sm:text-8xl text-white leading-none my-1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
+      Maria José</h1>
+<!-- Mis Quince Años / Mis XV -->
+<div class="flex items-center justify-center space-x-3 my-2">
+<span class="w-8 h-px bg-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]"></span>
+<span class="font-cormorant italic font-semibold text-xl sm:text-2xl text-white tracking-wide drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+        Mis Quince Años
+      </span>
+<span class="w-8 h-px bg-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)]"></span>
+</div>
+<!-- Date Capsule -->
+<div class="py-2 px-5 bg-white/20 backdrop-blur-md rounded-full border border-white/50 shadow-soft-card flex items-center justify-center space-x-2.5 mt-2">
+<span class="w-1.5 h-1.5 rounded-full bg-white drop-shadow-sm"></span>
+<span class="font-cinzel text-[11px] font-bold tracking-widest text-white uppercase drop-shadow-[0_1px_3px_rgba(0,0,0,0.6)]">
+        Sábado 29 • Diciembre • 2026
+      </span>
+<span class="w-1.5 h-1.5 rounded-full bg-white drop-shadow-sm"></span>
+</div>
+<!-- Swipe / Scroll Down Prompt -->
+<a aria-label="Deslizar hacia abajo" class="mt-4 inline-flex flex-col items-center text-white hover:text-white/80 transition-colors animate-bounce-slow drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]" href="#blessing-section">
+<span class="text-[10px] font-cinzel font-semibold tracking-[0.2em] uppercase mb-0.5">Desliza hacia abajo</span>
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</a></div>
+<!-- Bottom Hero Typography & Date Badge -->
+<div class="relative z-10 px-6 pb-6 text-center flex flex-col items-center"><div class="mb-1 text-gold-600 drop-shadow-sm"><svg class="w-7 h-7 mx-auto" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24"><path d="M3 18h18M4 14l3.5-7 4.5 5 4.5-5 3.5 7H4z"></path><circle cx="12" cy="7" fill="currentColor" r="1"></circle><circle cx="4" cy="14" fill="currentColor" r="1"></circle><circle cx="20" cy="14" fill="currentColor" r="1"></circle></svg></div><h1 class="font-script text-7xl sm:text-8xl text-gold-600 leading-none my-1 drop-shadow-[0_2px_10px_rgba(255,255,255,0.85)]">Maria José</h1><div class="flex items-center justify-center space-x-3 my-2"><span class="w-8 h-px bg-gold-400"></span><span class="font-cormorant italic font-semibold text-xl sm:text-2xl text-deep-charcoal tracking-wide">Mis Quince Años</span><span class="w-8 h-px bg-gold-400"></span></div><a aria-label="Deslizar hacia abajo" class="mt-3 inline-flex flex-col items-center text-gold-700 hover:text-gold-600 transition-colors animate-bounce-slow" href="#blessing-section"><span class="text-[10px] font-cinzel font-semibold tracking-[0.2em] uppercase mb-0.5">Desliza hacia abajo</span><svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path></svg></a></div>
+</section>
+<!-- END: Full-Bleed Hero Section -->
+<!-- BEGIN: Blessing & Host Section -->
+<section class="px-6 py-6" data-purpose="blessing-invitation" id="blessing-section"><div class="text-center mb-5"><p class="font-cinzel text-xs text-gold-700 font-bold tracking-[0.3em] uppercase mb-3">Nuestra Quinceañera</p><div class="inline-flex py-2 px-5 bg-white/90 backdrop-blur-md rounded-full border border-gold-400/50 shadow-soft-card items-center justify-center space-x-2.5 mx-auto"><span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span><span class="font-cinzel text-[11px] font-bold tracking-widest text-deep-charcoal uppercase">Sábado 29 • Diciembre • 2026</span><span class="w-1.5 h-1.5 rounded-full bg-gold-500"></span></div></div>
+<div class="bg-white/80 rounded-2xl p-6 gold-foil-border shadow-soft-card text-center relative">
+<!-- Corner Floral flourishes -->
+<span class="text-gold-400/60 font-serif text-xs absolute top-2 left-3">✦</span>
+<span class="text-gold-400/60 font-serif text-xs absolute top-2 right-3">✦</span>
+<span class="text-gold-400/60 font-serif text-xs absolute bottom-2 left-3">✦</span>
+<span class="text-gold-400/60 font-serif text-xs absolute bottom-2 right-3">✦</span>
+<p class="font-cormorant italic text-deep-charcoal text-base leading-relaxed mb-4">
+          "Con la bendición de Dios y el inmenso amor de mi familia, tengo el honor de invitarte a celebrar uno de los momentos más hermosos e inolvidables de mi vida."
+        </p>
+<div class="w-16 h-px bg-gold-400/50 mx-auto my-4"></div>
+<!-- Parents -->
+<div class="mb-4">
+<p class="font-cinzel text-[11px] uppercase tracking-widest text-gold-600 font-semibold mb-1">
+            En compañía de mis Padres
+          </p>
+<p class="font-cormorant text-lg font-semibold text-deep-charcoal">
+            María González &amp; Juan Pérez
+          </p>
+</div>
+<!-- Godparents / Padrinos -->
+<div>
+<p class="font-cinzel text-[11px] uppercase tracking-widest text-gold-600 font-semibold mb-1">
+            Mis Padrinos de Honor
+          </p>
+<p class="font-cormorant text-lg font-semibold text-deep-charcoal">
+            Freddy Pérez &amp; Mónica Bernal
+          </p>
+</div>
+</div>
+</section>
+<!-- END: Blessing & Host Section -->
+<!-- BEGIN: Countdown Timer Section -->
+<section class="px-6 py-5" data-purpose="countdown-clock">
+<div class="bg-gradient-to-b from-powder-blue-100/90 to-powder-blue-50/70 rounded-2xl p-6 border border-gold-400/40 text-center shadow-soft-card">
+<p class="font-cinzel text-xs text-gold-600 font-bold uppercase tracking-[0.2em] mb-1">
+          ¡Cada vez falta menos!
+        </p>
+<p class="font-cormorant italic text-sm text-muted-slate mb-5">
+          Contando los instantes para nuestro gran día
+        </p>
+<!-- Countdown Display Cards -->
+<div class="grid grid-cols-4 gap-2 text-center" id="countdownTimer">
+<div class="bg-white/95 rounded-xl py-3 px-1 border border-powder-blue-200/70 shadow-sm flex flex-col items-center">
+<span class="font-cinzel text-2xl font-bold text-deep-charcoal leading-tight" id="daysCount">39</span>
+<span class="text-[9px] uppercase font-sans tracking-wider text-gold-600 font-medium mt-1">Días</span>
+</div>
+<div class="bg-white/95 rounded-xl py-3 px-1 border border-powder-blue-200/70 shadow-sm flex flex-col items-center">
+<span class="font-cinzel text-2xl font-bold text-deep-charcoal leading-tight" id="hoursCount">21</span>
+<span class="text-[9px] uppercase font-sans tracking-wider text-gold-600 font-medium mt-1">Horas</span>
+</div>
+<div class="bg-white/95 rounded-xl py-3 px-1 border border-powder-blue-200/70 shadow-sm flex flex-col items-center">
+<span class="font-cinzel text-2xl font-bold text-deep-charcoal leading-tight" id="minsCount">37</span>
+<span class="text-[9px] uppercase font-sans tracking-wider text-gold-600 font-medium mt-1">Min</span>
+</div>
+<div class="bg-white/95 rounded-xl py-3 px-1 border border-powder-blue-200/70 shadow-sm flex flex-col items-center">
+<span class="font-cinzel text-2xl font-bold text-powder-blue-500 leading-tight" id="secsCount">16</span>
+<span class="text-[9px] uppercase font-sans tracking-wider text-gold-600 font-medium mt-1">Seg</span>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Countdown Timer Section -->
+<!-- BEGIN: Event Itinerary & Timeline -->
+<section class="px-6 py-6" data-purpose="event-timeline">
+<div class="text-center mb-6">
+<span class="font-script text-3xl text-gold-600 block">Itinerario</span>
+<h2 class="font-cinzel text-base font-semibold tracking-widest text-deep-charcoal uppercase">
+          Detalles de la Celebración
+        </h2>
+<div class="w-12 h-0.5 bg-gold-400 mx-auto mt-2"></div>
+</div>
+<div class="relative pl-6 space-y-7 before:content-[''] before:absolute before:left-3 before:top-2 before:bottom-3 before:w-0.5 before:bg-gradient-to-b before:from-gold-400 before:via-powder-blue-300 before:to-gold-400">
+<!-- Timeline Item 1: Church -->
+<div class="relative flex items-start space-x-4">
+<!-- Timeline Marker -->
+<div class="absolute -left-6 top-1 w-6 h-6 rounded-full bg-sand-cream border-2 border-gold-500 flex items-center justify-center text-gold-600 shadow-sm">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2l-7 5v13h14V7l-7-5zm0 2.5l5 3.6V18H7V8.1l5-3.6zM11 9h2v2h-2V9zm0 3h2v4h-2v-4z"></path>
+</svg>
+</div>
+<div class="bg-white/85 rounded-xl p-4 border border-powder-blue-200/60 shadow-sm w-full">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-cinzel font-bold text-sm text-deep-charcoal">Ceremonia Religiosa</h3>
+<span class="font-cinzel text-xs font-bold text-gold-600 bg-gold-300/20 px-2 py-0.5 rounded">5:00 PM</span>
+</div>
+<p class="font-medium text-xs text-muted-slate mb-1">Parroquia San Judas Tadeo</p>
+<p class="text-[11px] text-gray-500 mb-3 leading-snug">Av. De las Rosas #124, Jardines del Prado</p>
+<a class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-powder-blue-400 text-powder-blue-500 text-xs font-medium hover:bg-powder-blue-50 transition-colors" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Ver Ubicación</span>
+</a>
+</div>
+</div>
+<!-- Timeline Item 2: Reception -->
+<div class="relative flex items-start space-x-4">
+<div class="absolute -left-6 top-1 w-6 h-6 rounded-full bg-sand-cream border-2 border-gold-500 flex items-center justify-center text-gold-600 shadow-sm">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 2C8 2 6 5 6 9c0 3 2 5.5 5 5.9V19H9v2h6v-2h-2v-4.1c3-.4 5-2.9 5-5.9 0-4-2-7-6-7zm-4 7c0-2.8 1.4-5 4-5s4 2.2 4 5H8z"></path>
+</svg>
+</div>
+<div class="bg-white/85 rounded-xl p-4 border border-powder-blue-200/60 shadow-sm w-full">
+<div class="flex justify-between items-baseline mb-1">
+<h3 class="font-cinzel font-bold text-sm text-deep-charcoal">Recepción &amp; Fiesta</h3>
+<span class="font-cinzel text-xs font-bold text-gold-600 bg-gold-300/20 px-2 py-0.5 rounded">7:00 PM</span>
+</div>
+<p class="font-medium text-xs text-muted-slate mb-1">Hacienda Santa Fe Grand Ballroom</p>
+<p class="text-[11px] text-gray-500 mb-3 leading-snug">Calzada Real Los Sauces Km 3.5</p>
+<a class="inline-flex items-center space-x-1.5 px-3 py-1.5 rounded-lg border border-powder-blue-400 text-powder-blue-500 text-xs font-medium hover:bg-powder-blue-50 transition-colors" href="https://maps.google.com" rel="noopener noreferrer" target="_blank">
+<svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+<path d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span>Ver Ubicación</span>
+</a>
+</div>
+</div>
+<!-- Timeline Item 3: Waltz -->
+<div class="relative flex items-start space-x-4">
+<div class="absolute -left-6 top-1 w-6 h-6 rounded-full bg-sand-cream border-2 border-gold-500 flex items-center justify-center text-gold-600 shadow-sm">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+<circle cx="12" cy="4" r="2"></circle>
+<path d="M15 9l-3 4-2-2-4 5h14l-5-7z"></path>
+</svg>
+</div>
+<div class="bg-white/85 rounded-xl p-4 border border-powder-blue-200/60 shadow-sm w-full">
+<div class="flex justify-between items-baseline">
+<h3 class="font-cinzel font-bold text-sm text-deep-charcoal">Vals Principal &amp; Brindis</h3>
+<span class="font-cinzel text-xs font-bold text-gold-600 bg-gold-300/20 px-2 py-0.5 rounded">9:00 PM</span>
+</div>
+<p class="text-xs text-muted-slate mt-1">El emotivo vals familiar y palabras de agradecimiento.</p>
+</div>
+</div>
+<!-- Timeline Item 4: Party -->
+<div class="relative flex items-start space-x-4">
+<div class="absolute -left-6 top-1 w-6 h-6 rounded-full bg-sand-cream border-2 border-gold-500 flex items-center justify-center text-gold-600 shadow-sm">
+<svg class="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"></path>
+</svg>
+</div>
+<div class="bg-white/85 rounded-xl p-4 border border-powder-blue-200/60 shadow-sm w-full">
+<div class="flex justify-between items-baseline">
+<h3 class="font-cinzel font-bold text-sm text-deep-charcoal">Baile, Música &amp; Diversión</h3>
+<span class="font-cinzel text-xs font-bold text-gold-600 bg-gold-300/20 px-2 py-0.5 rounded">10:30 PM</span>
+</div>
+<p class="text-xs text-muted-slate mt-1">¡A disfrutar y bailar toda la noche!</p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Event Itinerary & Timeline -->
+<!-- BEGIN: Dress Code Section -->
+<section class="px-6 py-5" data-purpose="dress-code">
+<div class="bg-white/90 rounded-2xl p-6 gold-foil-border shadow-soft-card text-center relative overflow-hidden">
+<div class="text-gold-500 mb-2 flex justify-center space-x-2">
+<!-- Dress and suit icons -->
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M9 3l3 4 3-4 3 6-4 12H7L3 9l6-6z"></path>
+</svg>
+<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+<path d="M6 3h12v3l-4 6 4 9H6l4-9-4-6V3z"></path>
+</svg>
+</div>
+<span class="font-cinzel text-xs font-semibold uppercase tracking-widest text-gold-600 block mb-1">
+          Código de Vestimenta
+        </span>
+<h3 class="font-cormorant text-2xl font-bold text-deep-charcoal mb-2">
+          Rigurosa Etiqueta Formal
+        </h3>
+<p class="text-xs text-muted-slate mb-4">
+          Agradecemos vestir traje oscuro para caballeros y vestido largo para damas.
+        </p>
+<!-- Exclusive Color Warning Banner -->
+<div class="bg-powder-blue-50 border border-powder-blue-300 rounded-xl p-3 flex items-center justify-center space-x-2">
+<div class="w-3.5 h-3.5 rounded-full bg-[#94C5D6] border border-white shadow-sm flex-shrink-0"></div>
+<p class="text-[11px] font-medium text-deep-charcoal">
+<strong class="font-semibold text-powder-blue-500">Nota Especial:</strong> El color <span class="underline decoration-powder-blue-400">Azul Cielo</span> queda reservado exclusivamente para la Quinceañera.
+          </p>
+</div>
+</div>
+</section>
+<!-- END: Dress Code Section -->
+<!-- BEGIN: Gallery & Emotional Quote -->
+<section class="px-6 py-6" data-purpose="gallery-highlight">
+<div class="text-center mb-5">
+<span class="font-script text-3xl text-gold-600">Galería de Recuerdos</span>
+<p class="font-cormorant italic text-sm text-muted-slate mt-1">
+          "Momentos inolvidables rumbo a mis quince primaveras"
+        </p>
+</div>
+<!-- Featured Photo Card with Gold Inset -->
+<div class="bg-white/85 p-3 rounded-2xl gold-foil-border shadow-soft-card mb-4">
+<div class="overflow-hidden rounded-xl aspect-[4/5] relative">
+<img alt="Maria José retrato especial XV Años" class="w-full h-full object-cover object-top hover:scale-105 transition-transform duration-700" loading="lazy" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC9Reg6vcZiqhyvK0W76i2973MXTJarqV1Jrnu1g4yYAYRpkk1lXJ--WmESg1YQTW2fO8r7Iu2FC09XpzV29tzm7Avh5eztdQOa9hEMDbxdQe64h6dNHbJYPc71BPfzgq-gRC_CiSl4of_0NR0Jv91k9l4ZaReeJadL7sDKcu1P6dug4YpfXznNmSdheLGQxbT8Bf9vfekUTd-gtot8-vNP5MlKAF3dwi73GBusak0FvyzP0wlNUUs">
+<div class="absolute bottom-0 inset-x-0 p-4 bg-gradient-to-t from-black/60 to-transparent text-white text-center">
+<p class="font-cormorant italic text-base leading-snug">
+              “Hoy es un día muy importante, quiero compartirlo con las personas que llevo en el corazón.”
+            </p>
+</div>
+</div>
+</div>
+</section>
+<!-- END: Gallery & Emotional Quote -->
+<!-- BEGIN: Gift Suggestions (Lluvia de Sobres) -->
+<section class="px-6 py-5" data-purpose="gift-suggestions">
+<div class="bg-white/90 rounded-2xl p-6 border border-gold-400/40 shadow-soft-card text-center">
+<!-- Envelope Icon -->
+<div class="w-12 h-12 mx-auto rounded-full bg-powder-blue-100 flex items-center justify-center text-powder-blue-500 mb-3 border border-powder-blue-200">
+<svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+<path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+</div>
+<h3 class="font-cinzel text-xs font-bold uppercase tracking-widest text-gold-600 mb-1">
+          Lluvia de Sobres
+        </h3>
+<p class="font-cormorant italic text-base text-deep-charcoal mb-3">
+          Tu presencia es nuestro mejor regalo.
+        </p>
+<p class="text-xs text-muted-slate leading-relaxed mb-4">
+          Si deseas obsequiar un detalle adicional para acompañar mis metas y estudios, contaremos con buzón de sobres el día del evento, o bien vía transferencia:
+        </p>
+<!-- Account Data Box -->
+<div class="bg-powder-blue-50/70 rounded-xl p-3.5 border border-powder-blue-200 text-left text-xs mb-3 space-y-1">
+<div class="flex justify-between">
+<span class="text-muted-slate">Banco:</span>
+<span class="font-semibold text-deep-charcoal">BBVA Bancomer</span>
+</div>
+<div class="flex justify-between">
+<span class="text-muted-slate">Titular:</span>
+<span class="font-semibold text-deep-charcoal">Maria José Pérez González</span>
+</div>
+<div class="flex justify-between">
+<span class="text-muted-slate">CLABE:</span>
+<span class="font-mono font-semibold text-deep-charcoal" id="clabeNumber">0121 8001 5493 2198 44</span>
+</div>
+</div>
+<!-- Copy CLABE Button -->
+<button class="w-full py-2 px-4 rounded-xl border border-powder-blue-400 bg-white hover:bg-powder-blue-100 text-powder-blue-500 text-xs font-semibold tracking-wide transition-colors flex items-center justify-center space-x-2" id="copyClabeBtn">
+<svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+<path d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z" stroke-linecap="round" stroke-linejoin="round"></path>
+</svg>
+<span id="copyBtnText">Copiar Datos Bancarios</span>
+</button>
+</div>
+</section>
+<!-- END: Gift Suggestions -->
+<!-- BEGIN: RSVP Confirmation Section -->
+<section class="px-6 py-6" data-purpose="rsvp-confirmation" id="rsvp-section">
+<div class="bg-white/95 rounded-2xl p-6 gold-foil-border shadow-soft-card text-center">
+<span class="font-script text-3xl text-gold-600 block mb-1">Confirmación</span>
+<h3 class="font-cinzel text-sm font-bold uppercase tracking-widest text-deep-charcoal mb-2">
+          ¿Nos Acompañas?
+        </h3>
+<p class="text-xs text-muted-slate mb-5">
+          Por favor confírmanos tu asistencia antes del <strong>15 de Noviembre de 2026</strong> para considerarte en el banquete.
+        </p>
+<!-- Interactive RSVP Form to WhatsApp -->
+<form class="space-y-3.5 text-left" id="rsvpForm" onsubmit="handleRSVP(event)">
+<div>
+<label class="block text-[11px] font-semibold uppercase tracking-wider text-muted-slate mb-1" for="guestName">Nombre y Apellido</label>
+<input class="w-full text-xs rounded-xl border-powder-blue-300 focus:border-gold-500 focus:ring focus:ring-gold-300/30 px-3 py-2.5 bg-powder-blue-50/30" id="guestName" placeholder="Ej. Familia Martínez" required="" type="text">
+</div>
+<div>
+<label class="block text-[11px] font-semibold uppercase tracking-wider text-muted-slate mb-1" for="attendingStatus">¿Asistirás?</label>
+<select class="w-full text-xs rounded-xl border-powder-blue-300 focus:border-gold-500 focus:ring focus:ring-gold-300/30 px-3 py-2.5 bg-powder-blue-50/30" id="attendingStatus">
+<option value="¡Sí, con mucho gusto asistiré!">¡Sí, con mucho gusto asistiré!</option>
+<option value="Lamentablemente no podré asistir">Lamentablemente no podré asistir</option>
+</select>
+</div>
+<div>
+<label class="block text-[11px] font-semibold uppercase tracking-wider text-muted-slate mb-1" for="guestCount">Número de Pases a Confirmar</label>
+<input class="w-full text-xs rounded-xl border-powder-blue-300 focus:border-gold-500 focus:ring focus:ring-gold-300/30 px-3 py-2.5 bg-powder-blue-50/30" id="guestCount" max="6" min="1" type="number" value="2">
+</div>
+<div>
+<label class="block text-[11px] font-semibold uppercase tracking-wider text-muted-slate mb-1" for="guestMessage">Mensaje de Felicitación (Opcional)</label>
+<textarea class="w-full text-xs rounded-xl border-powder-blue-300 focus:border-gold-500 focus:ring focus:ring-gold-300/30 px-3 py-2 bg-powder-blue-50/30" id="guestMessage" placeholder="¡Felicidades Maria José en tus 15 años!" rows="2"></textarea>
+</div>
+<button class="w-full mt-2 py-3 px-4 bg-gradient-to-r from-gold-500 via-gold-600 to-gold-500 hover:opacity-95 text-white font-cinzel text-xs font-bold uppercase tracking-widest rounded-xl shadow-gold-glow transition-all transform active:scale-[0.98] flex items-center justify-center space-x-2" type="submit">
+<span>Confirmar por WhatsApp</span>
+<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.761.882 2.79.882h.001c3.181 0 5.768-2.586 5.768-5.766 0-3.18-2.587-5.768-5.768-5.768zm0 10.355c-.933 0-1.748-.276-2.454-.739l-.176-.115-1.572.412.419-1.533-.127-.184c-.524-.761-.801-1.472-.801-2.43 0-2.527 2.056-4.583 4.584-4.583 2.527 0 4.583 2.056 4.583 4.583 0 2.528-2.056 4.584-4.583 4.584zm2.513-3.444c-.138-.069-.817-.404-.944-.45-.126-.046-.219-.069-.311.069-.092.138-.357.45-.438.542-.08.092-.161.103-.299.034-.138-.069-.583-.215-1.111-.685-.411-.366-.689-.817-.769-.955-.08-.138-.009-.213.06-.282.063-.062.138-.161.207-.241.069-.08.092-.138.138-.23.046-.092.023-.172-.011-.241s-.311-.75-.426-1.026c-.112-.269-.226-.233-.311-.237l-.265-.005c-.092 0-.241.034-.368.172-.126.138-.483.472-.483 1.15 0 .679.494 1.335.563 1.427.069.092.973 1.486 2.357 2.084.329.143.587.228.787.292.331.105.632.09.871.054.266-.04.817-.334.932-.656.115-.322.115-.598.08-.656-.034-.057-.126-.092-.264-.161z"></path>
+</svg>
+</button>
+</form>
+</div>
+</section>
+<!-- END: RSVP Confirmation Section -->
+<!-- BEGIN: Closing Footer -->
+<footer class="mt-auto px-6 pt-6 pb-12 text-center bg-gradient-to-b from-transparent to-powder-blue-100/60" data-purpose="closing-footer">
+<div class="mb-3 text-gold-500">
+<svg class="w-8 h-8 mx-auto" fill="currentColor" viewBox="0 0 24 24">
+<path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+</svg>
+</div>
+<p class="font-cormorant italic text-lg text-deep-charcoal mb-1">
+        “Tu presencia hará este día aún más mágico e inolvidable.”
+      </p>
+<p class="font-script text-5xl text-gold-600 mt-2 mb-2">Maria José</p>
+<p class="font-cinzel text-[10px] tracking-[0.25em] text-muted-slate uppercase">
+        29 . 12 . 2026 • Mis XV Años
+      </p>
+<div class="mt-8 pt-4 border-t border-gold-400/20 text-[10px] text-gray-400">
+        Diseñado con amor y elegancia para momentos inolvidables
+      </div>
+</footer>
+<!-- END: Closing Footer -->
+</main>
+<!-- BEGIN: Logic & Interactivity Scripts -->
+<script data-purpose="audio-toggle">
+    // Mock audio play/pause simulation toggle for mobile UX
+    const musicBtn = document.getElementById('musicToggleBtn');
+    const playIcon = document.getElementById('playIcon');
+    const pauseIcon = document.getElementById('pauseIcon');
+    let isPlaying = false;
+
+    if (musicBtn) {
+      musicBtn.addEventListener('click', () => {
+        isPlaying = !isPlaying;
+        const iconContainer = musicBtn.querySelector('.music-pulse') || musicBtn.querySelector('div');
+        if (isPlaying) {
+          playIcon.classList.add('hidden');
+          pauseIcon.classList.remove('hidden');
+          if (iconContainer) iconContainer.classList.remove('music-pulse');
+        } else {
+          playIcon.classList.remove('hidden');
+          pauseIcon.classList.add('hidden');
+          if (iconContainer) iconContainer.classList.add('music-pulse');
+        }
+      });
+    }
+  </script>
+<script data-purpose="countdown-logic">
+    // Live countdown calculation to December 29, 2026
+    const targetDate = new Date('December 29, 2026 17:00:00').getTime();
+
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const difference = targetDate - now;
+
+      if (difference > 0) {
+        const days = Math.floor(difference / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((difference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+        document.getElementById('daysCount').innerText = days;
+        document.getElementById('hoursCount').innerText = hours < 10 ? '0' + hours : hours;
+        document.getElementById('minsCount').innerText = minutes < 10 ? '0' + minutes : minutes;
+        document.getElementById('secsCount').innerText = seconds < 10 ? '0' + seconds : seconds;
+      }
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+<script data-purpose="clipboard-copy">
+    // Copy CLABE data with feedback
+    const copyBtn = document.getElementById('copyClabeBtn');
+    const copyBtnText = document.getElementById('copyBtnText');
+    const clabeText = document.getElementById('clabeNumber').innerText;
+
+    copyBtn.addEventListener('click', () => {
+      navigator.clipboard.writeText(clabeText.replace(/\s+/g, '')).then(() => {
+        copyBtnText.innerText = '¡CLABE Copiada con Éxito!';
+        copyBtn.classList.add('bg-powder-blue-200', 'text-powder-blue-500');
+        setTimeout(() => {
+          copyBtnText.innerText = 'Copiar Datos Bancarios';
+          copyBtn.classList.remove('bg-powder-blue-200', 'text-powder-blue-500');
+        }, 2500);
+      }).catch(() => {
+        alert('CLABE: ' + clabeText);
+      });
+    });
+  </script>
+<script data-purpose="rsvp-handler">
+    // WhatsApp RSVP redirection with formatted message
+    function handleRSVP(event) {
+      event.preventDefault();
+      const name = document.getElementById('guestName').value.trim();
+      const status = document.getElementById('attendingStatus').value;
+      const count = document.getElementById('guestCount').value;
+      const message = document.getElementById('guestMessage').value.trim();
+
+      const phone = "5215512345678"; // Replace with organizer/quinceañera WhatsApp phone number
+
+      let text = `¡Hola Ximena! Confirmo mi asistencia para tus XV Años:%0A%0A`;
+      text += `*Nombre:* ${encodeURIComponent(name)}%0A`;
+      text += `*Respuesta:* ${encodeURIComponent(status)}%0A`;
+      text += `*Pases confirmados:* ${encodeURIComponent(count)}%0A`;
+      if (message) {
+        text += `*Mensaje:* ${encodeURIComponent(message)}%0A`;
+      }
+
+      window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    }
+  </script>
+<!-- END: Logic & Interactivity Scripts -->
+
+
+</body></html>

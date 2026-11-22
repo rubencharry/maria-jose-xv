@@ -1,0 +1,46 @@
+---
+const clabe = '0121 8001 5493 2198 44';
+---
+
+<section class="px-6 py-5" data-purpose="gift-suggestions">
+  <div class="bg-white/90 rounded-2xl p-6 border border-gold-400/40 shadow-soft-card text-center">
+    <!-- Envelope icon -->
+    <div class="w-12 h-12 mx-auto rounded-full bg-powder-blue-100 flex items-center justify-center text-powder-blue-500 mb-3 border border-powder-blue-200">
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+        <path
+          d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        ></path>
+      </svg>
+    </div>
+
+    <h3 class="font-cinzel text-xs font-bold uppercase tracking-widest text-gold-600 mb-1">Lluvia de Sobres</h3>
+    <p class="font-cormorant italic text-base text-deep-charcoal mb-3">Tu presencia es nuestro mejor regalo.</p>
+    <p class="text-xs text-muted-slate leading-relaxed mb-4">
+      Si deseas obsequiar un detalle adicional para acompañar mis metas y estudios, contaremos con buzón de sobres el
+      día del evento, o bien vía transferencia:
+    </p>
+
+  </div>
+</section>
+
+<script>
+  const btn = document.getElementById('copyClabeBtn') as HTMLButtonElement;
+  const btnText = document.getElementById('copyBtnText') as HTMLSpanElement;
+  const clabeEl = document.getElementById('clabeNumber') as HTMLSpanElement;
+
+  btn?.addEventListener('click', () => {
+    const raw = (clabeEl?.textContent ?? '').replace(/\s+/g, '');
+    navigator.clipboard.writeText(raw).then(() => {
+      btnText.textContent = '¡CLABE Copiada con Éxito!';
+      btn.classList.add('bg-powder-blue-200');
+      setTimeout(() => {
+        btnText.textContent = 'Copiar Datos Bancarios';
+        btn.classList.remove('bg-powder-blue-200');
+      }, 2500);
+    }).catch(() => {
+      alert('CLABE: ' + (clabeEl?.textContent ?? ''));
+    });
+  });
+</script>

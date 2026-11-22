@@ -1,0 +1,52 @@
+---
+---
+
+<section
+  class="relative w-full h-[95vh] min-h-[640px] max-h-[860px] overflow-hidden flex flex-col justify-end"
+  data-purpose="hero-cover"
+>
+  <!-- Full-bleed background photo -->
+  <img
+    alt="Maria José XV Años"
+    class="absolute inset-0 w-full h-full object-cover object-center"
+    src="/img/maria-jose-1.webp"
+  />
+
+  <!-- Multi-layer overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent from-[55%] via-black/15 via-[75%] to-sand-cream/70 pointer-events-none"></div>
+
+  <!-- Footer: crown, name, "Mis Quince Años" & scroll -->
+  <div class="relative z-10 px-6 pb-8 text-center">
+    <!-- Crown icon -->
+    <div class="mb-0 text-white drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]">
+      <svg class="w-7 h-7 mx-auto" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.6" viewBox="0 0 24 24">
+        <path d="M3 18h18M4 14l3.5-7 4.5 5 4.5-5 3.5 7H4z"></path>
+        <circle cx="12" cy="7" fill="currentColor" r="1"></circle>
+        <circle cx="4" cy="14" fill="currentColor" r="1"></circle>
+        <circle cx="20" cy="14" fill="currentColor" r="1"></circle>
+      </svg>
+    </div>
+    <h1 class="font-script text-7xl sm:text-8xl text-white leading-none my-1 drop-shadow-[0_2px_10px_rgba(0,0,0,0.7)]">
+      Maria José
+    </h1>
+    <div class="flex items-center justify-center space-x-4 mt-1">
+      <span class="flex-1 h-px bg-white/70 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"></span>
+      <p class="font-cormorant italic font-semibold text-4xl sm:text-5xl text-white tracking-wide drop-shadow-[0_2px_8px_rgba(0,0,0,0.7)]">
+        Mis Quince Años
+      </p>
+      <span class="flex-1 h-px bg-white/70 drop-shadow-[0_1px_2px_rgba(0,0,0,0.5)]"></span>
+    </div>
+    <!-- Scroll prompt -->
+    <a
+      aria-label="Deslizar hacia abajo"
+      class="mt-4 inline-flex flex-col items-center text-white hover:text-white/80 transition-colors animate-bounce-slow drop-shadow-[0_2px_4px_rgba(0,0,0,0.6)]"
+      href="#blessing-section"
+    >
+      <span class="text-[10px] font-cinzel font-semibold tracking-[0.2em] uppercase mb-0.5">Desliza hacia abajo</span>
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path d="M19 9l-7 7-7-7" stroke-linecap="round" stroke-linejoin="round"></path>
+      </svg>
+    </a>
+  </div>
+
+</section>

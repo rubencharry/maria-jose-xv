@@ -1,0 +1,56 @@
+---
+---
+
+<section class="px-6 py-5" data-purpose="countdown-clock">
+  <div class="bg-gradient-to-b from-powder-blue-100/90 to-powder-blue-50/70 rounded-2xl p-6 border border-gold-400/40 text-center shadow-soft-card">
+    <p class="font-cinzel text-xs text-gold-600 font-bold uppercase tracking-[0.2em] mb-1">
+      ¡Cada vez falta menos!
+    </p>
+    <p class="font-cormorant italic text-sm text-muted-slate mb-5">
+      Contando los instantes para nuestro gran día
+    </p>
+
+    <div class="grid grid-cols-4 gap-2 text-center" id="countdownTimer">
+      <div class="bg-white/95 rounded-xl py-3 px-1 border border-powder-blue-200/70 shadow-sm flex flex-col items-center">
+        <span class="font-cinzel text-2xl font-bold text-deep-charcoal leading-tight" id="daysCount">--</span>
+        <span class="text-[9px] uppercase font-sans tracking-wider text-gold-600 font-medium mt-1">Días</span>
+      </div>
+      <div class="bg-white/95 rounded-xl py-3 px-1 border border-powder-blue-200/70 shadow-sm flex flex-col items-center">
+        <span class="font-cinzel text-2xl font-bold text-deep-charcoal leading-tight" id="hoursCount">--</span>
+        <span class="text-[9px] uppercase font-sans tracking-wider text-gold-600 font-medium mt-1">Horas</span>
+      </div>
+      <div class="bg-white/95 rounded-xl py-3 px-1 border border-powder-blue-200/70 shadow-sm flex flex-col items-center">
+        <span class="font-cinzel text-2xl font-bold text-deep-charcoal leading-tight" id="minsCount">--</span>
+        <span class="text-[9px] uppercase font-sans tracking-wider text-gold-600 font-medium mt-1">Min</span>
+      </div>
+      <div class="bg-white/95 rounded-xl py-3 px-1 border border-powder-blue-200/70 shadow-sm flex flex-col items-center">
+        <span class="font-cinzel text-2xl font-bold text-powder-blue-500 leading-tight" id="secsCount">--</span>
+        <span class="text-[9px] uppercase font-sans tracking-wider text-gold-600 font-medium mt-1">Seg</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const targetDate = new Date('December 19, 2026 19:00:00').getTime();
+
+  function updateCountdown() {
+    const diff = targetDate - Date.now();
+    if (diff <= 0) return;
+
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const secs = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const pad = (n: number) => String(n).padStart(2, '0');
+
+    (document.getElementById('daysCount') as HTMLElement).textContent = String(days);
+    (document.getElementById('hoursCount') as HTMLElement).textContent = pad(hours);
+    (document.getElementById('minsCount') as HTMLElement).textContent = pad(mins);
+    (document.getElementById('secsCount') as HTMLElement).textContent = pad(secs);
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>

@@ -1,0 +1,105 @@
+---
+const venue   = 'Hacienda la Alameda';
+const address = 'Calle 15 8A-45, Funza, Cundinamarca';
+const mapsUrl = 'https://maps.google.com/?q=';
+---
+
+<section class="px-6 py-5" data-purpose="event-location">
+  <div class="bg-white/90 rounded-2xl shadow-soft-card text-center relative overflow-hidden py-8 px-6">
+
+    <!-- Flor esquina superior izquierda -->
+    <img
+      src="/flores/flor-esquina-inferior.webp"
+      alt=""
+      aria-hidden="true"
+      class="absolute -top-6 -left-6 w-[38%] h-auto pointer-events-none select-none [transform:scaleY(-1)]"
+      loading="lazy"
+    />
+
+    <!-- Flor esquina inferior derecha -->
+    <img
+      src="/flores/flor-esquina-inferior.webp"
+      alt=""
+      aria-hidden="true"
+      class="absolute -bottom-6 -right-6 w-[38%] h-auto pointer-events-none select-none [transform:scaleX(-1)]"
+      loading="lazy"
+    />
+
+    <!-- Bloque de fecha -->
+    <div class="mb-1">
+
+      <!-- Fila 1: Sábado centrado verticalmente con el 19 -->
+      <div class="flex items-center justify-center gap-3">
+        <p class="font-cinzel text-4xl uppercase tracking-[0.08em] text-deep-charcoal leading-none">
+          Sábado
+        </p>
+        <p class="font-cinzel text-gold-500 leading-none select-none"
+           style="font-size:7rem; line-height:0.88; letter-spacing:-0.02em;">
+          19
+        </p>
+      </div>
+
+      <!-- Fila 2: Diciembre y 2026 juntos, baseline compartido -->
+      <div class="flex items-baseline justify-center gap-3 -mt-2">
+        <p class="font-script text-5xl text-gold-500 leading-none">
+          Diciembre
+        </p>
+        <p class="font-cinzel text-4xl uppercase tracking-[0.06em] text-deep-charcoal leading-none">
+          2026
+        </p>
+      </div>
+
+    </div>
+
+    <!-- Separador ornamental -->
+    <div class="flex items-center gap-2 my-5 px-4">
+      <div class="flex-1 h-px bg-gradient-to-r from-transparent to-gold-300"/>
+      <svg class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" viewBox="0 0 16 16" fill="currentColor">
+        <path d="M8 0l1.6 5H14l-3.9 2.9 1.5 4.6L8 9.6l-3.6 2.9 1.5-4.6L2 5h4.4Z"/>
+      </svg>
+      <div class="flex-1 h-px bg-gradient-to-l from-transparent to-gold-300"/>
+    </div>
+
+    <!-- Pin -->
+    <div class="flex justify-center mb-3">
+      <div class="w-10 h-10 rounded-full bg-gold-50 border border-gold-300 flex items-center justify-center text-gold-500">
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.8" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"/>
+          <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1 1 15 0Z"/>
+        </svg>
+      </div>
+    </div>
+
+    <!-- Nombre del salón -->
+    <p class="font-cinzel text-sm font-bold uppercase tracking-widest text-deep-charcoal leading-snug mb-1">
+      {venue}
+    </p>
+
+    <!-- Dirección -->
+    <p class="font-cormorant italic text-muted-slate text-2xl leading-snug mb-5">
+      {address}
+    </p>
+
+    <!-- Separador con hora -->
+    <div class="flex items-center gap-3 mb-5">
+      <div class="flex-1 h-px bg-gold-400/25"/>
+      <p class="font-cinzel text-[16px] uppercase tracking-widest text-gold-500 flex-shrink-0">7:00 PM</p>
+      <div class="flex-1 h-px bg-gold-400/25"/>
+    </div>
+
+    <!-- Botón mapa -->
+    <a
+      href={mapsUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center justify-center gap-2 w-full py-2.5 rounded-xl border border-powder-blue-400 bg-white hover:bg-powder-blue-50 text-powder-blue-500 text-xs font-semibold tracking-wide transition-colors"
+    >
+      <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round"
+          d="M9 20l-5.447-2.724A1 1 0 0 1 3 16.382V5.618a1 1 0 0 1 1.447-.894L9 7m0 13 6-3m-6 3V7m6 10 4.553 2.276A1 1 0 0 0 21 18.382V7.618a1 1 0 0 0-1.447-.894L15 9m0 8V9m0 0L9 7"/>
+      </svg>
+      Ver en Google Maps
+    </a>
+
+  </div>
+</section>
