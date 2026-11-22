@@ -21,7 +21,7 @@ import '../styles/custom.css';
     </main>
 
     <!-- Música de fondo -->
-    <audio id="bg-music" loop preload="auto">
+    <audio id="bg-music" loop preload="auto" muted autoplay>
       <source src="/music/Carlos-Rivera-te-esperaba.mp3" type="audio/mpeg" />
     </audio>
 
@@ -70,7 +70,6 @@ import '../styles/custom.css';
 
     <script is:inline>
       (function () {
-        // Evitar doble ejecución (HMR de Astro dev o cualquier otra causa)
         if (window.__bgMusicReady) return;
         window.__bgMusicReady = true;
 
@@ -86,16 +85,30 @@ import '../styles/custom.css';
           btn.setAttribute('aria-label', on ? 'Pausar música' : 'Reproducir música');
         }
 
-        audio.play()
-          .then(() => setPlaying(true))
-          .catch(() => setPlaying(false));
+        audio.addEventListener('play',  function() { setPlaying(true);  });
+        audio.addEventListener('pause', function() { setPlaying(false); });
 
-        btn.addEventListener('click', () => {
+        // Muted autoplay → desmutear inmediatamente (técnica que pasa el filtro del browser)
+        audio.muted = true;
+        audio.play().then(function() {
+          audio.muted = false;
+        }).catch(function() {
+          // Si sigue bloqueado, arrancar en el primer gesto
+          audio.muted = false;
+          function onFirstGesture() {
+            audio.play();
+          }
+          document.addEventListener('click',      onFirstGesture, { once: true });
+          document.addEventListener('touchstart', onFirstGesture, { once: true });
+        });
+
+        // Botón manual — stopPropagation para no disparar onFirstGesture y toggle
+        btn.addEventListener('click', function(e) {
+          e.stopPropagation();
           if (audio.paused) {
-            audio.play().then(() => setPlaying(true));
+            audio.play();
           } else {
             audio.pause();
-            setPlaying(false);
           }
         });
       })();
