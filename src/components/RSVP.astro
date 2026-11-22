@@ -16,7 +16,7 @@ const whatsappPhone = '3150602339';
       <!-- Select de familia -->
       <div>
         <label class="block text-[11px] font-semibold uppercase tracking-wider text-muted-slate mb-1" for="familiaSelect">
-          Familia o Grupo
+          Buscar por representante
         </label>
         <div class="relative">
           <select
@@ -24,7 +24,7 @@ const whatsappPhone = '3150602339';
             id="familiaSelect"
             disabled
           >
-            <option value="">Cargando familias...</option>
+            <option value="">Cargando...</option>
           </select>
           <!-- Ícono chevron -->
           <div class="pointer-events-none absolute right-3 top-1/2 -translate-y-1/2 text-muted-slate">
@@ -187,15 +187,15 @@ const whatsappPhone = '3150602339';
   async function inicializar() {
     const { data, error } = await supabase
       .from('familias')
-      .select('id, nombre')
-      .order('nombre');
+      .select('id, representante')
+      .order('representante');
 
     familiaSelect.innerHTML = '';
 
     if (error || !data || data.length === 0) {
       const opt = document.createElement('option');
       opt.value = '';
-      opt.textContent = error ? 'Error al cargar familias' : 'Sin familias registradas aún';
+      opt.textContent = error ? 'Error al cargar' : 'Sin invitados registrados aún';
       familiaSelect.appendChild(opt);
       familiaSelect.disabled = true;
       return;
@@ -203,13 +203,13 @@ const whatsappPhone = '3150602339';
 
     const placeholder = document.createElement('option');
     placeholder.value = '';
-    placeholder.textContent = '— Selecciona tu familia o grupo —';
+    placeholder.textContent = '— Busca tu nombre como representante —';
     familiaSelect.appendChild(placeholder);
 
-    data.forEach((f: { id: string; nombre: string }) => {
+    data.forEach((f: { id: string; representante: string }) => {
       const opt = document.createElement('option');
       opt.value = f.id;
-      opt.textContent = f.nombre;
+      opt.textContent = f.representante;
       familiaSelect.appendChild(opt);
     });
 
@@ -279,7 +279,7 @@ const whatsappPhone = '3150602339';
       : seleccionados.slice(0, -1).join(', ') + ' y ' + seleccionados[seleccionados.length - 1];
     const phone = form.dataset.phone ?? '';
     let msg = `✅ Nueva confirmación XV María José%0A%0A`;
-    msg += `*Familia:* ${encodeURIComponent(familiaNombre)}%0A`;
+    msg += `*Representante:* ${encodeURIComponent(familiaNombre)}%0A`;
     msg += `*Asistirán (${seleccionados.length}):* ${encodeURIComponent(lista)}%0A`;
     if (mensaje) msg += `*Mensaje:* ${encodeURIComponent(mensaje)}%0A`;
     window.open(`https://wa.me/57${phone}?text=${msg}`, '_blank');
