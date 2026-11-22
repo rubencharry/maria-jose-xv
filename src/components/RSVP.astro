@@ -1,5 +1,5 @@
 ---
-const whatsappPhone = '5215512345678';
+const whatsappPhone = '3150602339';
 ---
 
 <section class="px-6 py-6" data-purpose="rsvp-confirmation" id="rsvp-section">
@@ -37,16 +37,38 @@ const whatsappPhone = '5215512345678';
 
       <!-- Tarjeta personalizada de invitación -->
       <div id="queridosContainer" class="hidden">
-        <div class="relative bg-gradient-to-b from-powder-blue-50/80 to-white rounded-2xl px-5 pt-5 pb-4 border border-powder-blue-200 text-center overflow-hidden">
+        <div class="relative bg-gradient-to-b from-powder-blue-50/80 to-white rounded-2xl px-5 pt-6 pb-5 border border-powder-blue-200 text-center overflow-hidden">
+
+          <!-- Flores esquinas -->
+          <img
+            src="/flores/flor-esquina-inferior.webp"
+            alt=""
+            aria-hidden="true"
+            class="absolute -top-5 -left-5 w-[36%] h-auto pointer-events-none select-none opacity-90 [transform:scaleY(-1)]"
+            loading="lazy"
+          />
+          <img
+            src="/flores/flor-esquina-inferior.webp"
+            alt=""
+            aria-hidden="true"
+            class="absolute -bottom-5 -right-5 w-[36%] h-auto pointer-events-none select-none opacity-90 [transform:scaleX(-1)]"
+            loading="lazy"
+          />
 
           <!-- Ornamento superior -->
-          <div class="flex items-center justify-center gap-2 mb-3">
+          <div class="flex items-center justify-center gap-2 mb-2">
             <span class="block h-px w-8 bg-gold-300"></span>
             <svg class="w-3.5 h-3.5 text-gold-400 flex-shrink-0" viewBox="0 0 24 24" fill="currentColor">
               <path d="M12 2l1.5 4.5L18 8l-4.5 1.5L12 14l-1.5-4.5L6 8l4.5-1.5z"/>
             </svg>
             <span class="block h-px w-8 bg-gold-300"></span>
           </div>
+
+          <!-- Título "Queridos:" -->
+          <p class="font-script text-[1.7rem] text-gold-600 leading-tight mb-1">Queridos:</p>
+
+          <!-- Instrucción -->
+          <p class="text-[10px] text-muted-slate/80 mb-3">Marca quienes confirman asistencia</p>
 
           <!-- Lista de integrantes con checks -->
           <ul id="integrantesList" class="text-left space-y-1.5 mb-4"></ul>
@@ -59,14 +81,10 @@ const whatsappPhone = '5215512345678';
           </div>
 
           <!-- Mensaje cálido -->
-          <p class="font-cormorant text-sm italic text-muted-slate leading-relaxed mb-3">
+          <p class="font-cormorant text-[1rem] italic text-muted-slate leading-relaxed mb-1">
             Con mucho cariño los esperamos para acompañarnos<br/>
             en este día tan especial. ¡Será un honor compartirlo con ustedes!
           </p>
-
-          <!-- Decoración de fondo sutil -->
-          <div class="absolute -bottom-3 -right-3 w-20 h-20 rounded-full bg-powder-blue-100/40 blur-xl pointer-events-none"></div>
-          <div class="absolute -top-3 -left-3 w-16 h-16 rounded-full bg-gold-300/20 blur-xl pointer-events-none"></div>
         </div>
       </div>
 
@@ -83,12 +101,13 @@ const whatsappPhone = '5215512345678';
       </div>
 
       <button
-        class="w-full mt-2 py-3 px-4 bg-gradient-to-r from-gold-500 via-gold-600 to-gold-500 hover:opacity-95 text-white font-cinzel text-xs font-bold uppercase tracking-widest rounded-xl shadow-gold-glow transition-all transform active:scale-[0.98] flex items-center justify-center space-x-2"
+        class="w-full mt-2 py-3 px-4 bg-gradient-to-r from-gold-500 via-gold-600 to-gold-500 hover:opacity-95 text-white font-cinzel text-xs font-bold uppercase tracking-widest rounded-xl shadow-gold-glow transition-all transform active:scale-[0.98] flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+        id="submitBtn"
         type="submit"
       >
-        <span>Confirmar por WhatsApp</span>
-        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.711 2.598 2.669-.699c.969.586 1.761.882 2.79.882h.001c3.181 0 5.768-2.586 5.768-5.766 0-3.18-2.587-5.768-5.768-5.768zm0 10.355c-.933 0-1.748-.276-2.454-.739l-.176-.115-1.572.412.419-1.533-.127-.184c-.524-.761-.801-1.472-.801-2.43 0-2.527 2.056-4.583 4.584-4.583 2.527 0 4.583 2.056 4.583 4.583 0 2.528-2.056 4.584-4.583 4.584zm2.513-3.444c-.138-.069-.817-.404-.944-.45-.126-.046-.219-.069-.311.069-.092.138-.357.45-.438.542-.08.092-.161.103-.299.034-.138-.069-.583-.215-1.111-.685-.411-.366-.689-.817-.769-.955-.08-.138-.009-.213.06-.282.063-.062.138-.161.207-.241.069-.08.092-.138.138-.23.046-.092.023-.172-.011-.241s-.311-.75-.426-1.026c-.112-.269-.226-.233-.311-.237l-.265-.005c-.092 0-.241.034-.368.172-.126.138-.483.472-.483 1.15 0 .679.494 1.335.563 1.427.069.092.973 1.486 2.357 2.084.329.143.587.228.787.292.331.105.632.09.871.054.266-.04.817-.334.932-.656.115-.322.115-.598.08-.656-.034-.057-.126-.092-.264-.161z"></path>
+        <span id="submitLabel">Confirmar Asistencia</span>
+        <svg class="w-4 h-4" id="submitIcon" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>
         </svg>
       </button>
     </form>
@@ -103,22 +122,53 @@ const whatsappPhone = '5215512345678';
     import.meta.env.PUBLIC_SUPABASE_ANON_KEY
   );
 
-  const familiaSelect = document.getElementById('familiaSelect') as HTMLSelectElement;
+  const familiaSelect     = document.getElementById('familiaSelect')     as HTMLSelectElement;
   const queridosContainer = document.getElementById('queridosContainer') as HTMLDivElement;
-  const queridosText = document.getElementById('queridosText') as HTMLParagraphElement;
-  const guestCount = document.getElementById('guestCount') as HTMLInputElement;
+  const integrantesList   = document.getElementById('integrantesList')   as HTMLUListElement;
 
-  // Cache para no repetir queries de integrantes
   const integrantesCache = new Map<string, string[]>();
 
-  function formatearIntegrantes(nombres: string[]): string {
-    if (nombres.length === 0) return '';
-    if (nombres.length === 1) return `Querido/a: ${nombres[0]}`;
-    const ultimo = nombres[nombres.length - 1];
-    const anteriores = nombres.slice(0, -1).join(', ');
-    return `Queridos: ${anteriores} y ${ultimo}`;
+  // ---------------------------------------------------------------------------
+  // Checklist
+  // ---------------------------------------------------------------------------
+  function renderChecklist(nombres: string[]) {
+    integrantesList.innerHTML = '';
+
+    nombres.forEach((nombre, i) => {
+      const id = `inv-${i}`;
+
+      const li = document.createElement('li');
+      li.className = 'flex items-center gap-3 px-1';
+
+      const checkbox = document.createElement('input');
+      checkbox.type    = 'checkbox';
+      checkbox.id      = id;
+      checkbox.name    = 'integrante';
+      checkbox.value   = nombre;
+      checkbox.checked = false;
+      checkbox.className =
+        'w-4 h-4 rounded border-gold-400 text-gold-500 focus:ring-gold-300/40 flex-shrink-0 cursor-pointer accent-amber-500';
+
+      const label = document.createElement('label');
+      label.htmlFor     = id;
+      label.textContent = nombre;
+      label.className   = 'font-cormorant text-[1rem] text-deep-charcoal cursor-pointer select-none';
+
+      li.appendChild(checkbox);
+      li.appendChild(label);
+      integrantesList.appendChild(li);
+    });
   }
 
+  function nombresSeleccionados(): string[] {
+    return Array.from(
+      integrantesList.querySelectorAll<HTMLInputElement>('input[name="integrante"]:checked')
+    ).map(cb => cb.value);
+  }
+
+  // ---------------------------------------------------------------------------
+  // Datos
+  // ---------------------------------------------------------------------------
   async function cargarIntegrantes(familiaId: string): Promise<string[]> {
     if (integrantesCache.has(familiaId)) return integrantesCache.get(familiaId)!;
 
@@ -166,50 +216,80 @@ const whatsappPhone = '5215512345678';
     familiaSelect.disabled = false;
   }
 
+  // ---------------------------------------------------------------------------
+  // Eventos
+  // ---------------------------------------------------------------------------
   familiaSelect.addEventListener('change', async () => {
     const familiaId = familiaSelect.value;
 
     if (!familiaId) {
       queridosContainer.classList.add('hidden');
+      integrantesList.innerHTML = '';
       return;
     }
 
     queridosContainer.classList.remove('hidden');
-    queridosText.textContent = 'Cargando invitados...';
+    integrantesList.innerHTML = '<li class="text-xs text-muted-slate italic px-1">Cargando invitados...</li>';
 
     const nombres = await cargarIntegrantes(familiaId);
-    queridosText.textContent = formatearIntegrantes(nombres);
-
-    if (nombres.length > 0) {
-      guestCount.value = String(nombres.length);
-    }
+    renderChecklist(nombres);
   });
 
-  const form = document.getElementById('rsvpForm') as HTMLFormElement;
+  const form       = document.getElementById('rsvpForm')   as HTMLFormElement;
+  const submitBtn  = document.getElementById('submitBtn')   as HTMLButtonElement;
+  const submitLabel= document.getElementById('submitLabel') as HTMLSpanElement;
+  const submitIcon = document.getElementById('submitIcon')  as unknown as SVGElement;
 
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
 
-    const familiaId = familiaSelect.value;
-    const familiaNombre = familiaSelect.selectedOptions[0]?.textContent ?? '';
-    const status = (document.getElementById('attendingStatus') as HTMLSelectElement).value;
-    const count = (document.getElementById('guestCount') as HTMLInputElement).value;
-    const message = (document.getElementById('guestMessage') as HTMLTextAreaElement).value.trim();
-    const phone = form.dataset.phone ?? '5215512345678';
+    const familiaId     = familiaSelect.value;
+    const seleccionados = nombresSeleccionados();
+    const mensaje       = (document.getElementById('guestMessage') as HTMLTextAreaElement).value.trim();
 
     if (!familiaId) {
-      familiaSelect.classList.add('ring', 'ring-red-300', 'border-red-400');
-      setTimeout(() => familiaSelect.classList.remove('ring', 'ring-red-300', 'border-red-400'), 2000);
+      familiaSelect.classList.add('ring-2', 'ring-red-300', 'border-red-400');
+      setTimeout(() => familiaSelect.classList.remove('ring-2', 'ring-red-300', 'border-red-400'), 2000);
       return;
     }
 
-    let text = `¡Hola! Confirmo la asistencia para los XV Años de Maria José:%0A%0A`;
-    text += `*Familia / Grupo:* ${encodeURIComponent(familiaNombre)}%0A`;
-    text += `*Respuesta:* ${encodeURIComponent(status)}%0A`;
-    text += `*Pases confirmados:* ${encodeURIComponent(count)}%0A`;
-    if (message) text += `*Mensaje:* ${encodeURIComponent(message)}%0A`;
+    if (seleccionados.length === 0) return;
 
-    window.open(`https://wa.me/${phone}?text=${text}`, '_blank');
+    // Estado: enviando
+    submitBtn.disabled    = true;
+    submitLabel.textContent = 'Enviando…';
+
+    const { error } = await supabase.from('confirmaciones').insert({
+      familia_id: familiaId,
+      asistentes: seleccionados,
+      mensaje:    mensaje || null,
+    });
+
+    if (error) {
+      console.error(error);
+      submitLabel.textContent = 'Error al enviar';
+      submitBtn.disabled = false;
+      return;
+    }
+
+    // Notificación WhatsApp al organizador
+    const familiaNombre = familiaSelect.selectedOptions[0]?.textContent ?? '';
+    const lista = seleccionados.length === 1
+      ? seleccionados[0]
+      : seleccionados.slice(0, -1).join(', ') + ' y ' + seleccionados[seleccionados.length - 1];
+    const phone = form.dataset.phone ?? '';
+    let msg = `✅ Nueva confirmación XV María José%0A%0A`;
+    msg += `*Familia:* ${encodeURIComponent(familiaNombre)}%0A`;
+    msg += `*Asistirán (${seleccionados.length}):* ${encodeURIComponent(lista)}%0A`;
+    if (mensaje) msg += `*Mensaje:* ${encodeURIComponent(mensaje)}%0A`;
+    window.open(`https://wa.me/57${phone}?text=${msg}`, '_blank');
+
+    // Estado: confirmado ✓
+    submitBtn.classList.remove('from-gold-500', 'via-gold-600', 'to-gold-500', 'shadow-gold-glow');
+    submitBtn.classList.add('from-emerald-500', 'via-emerald-600', 'to-emerald-500');
+    submitLabel.textContent = '¡Confirmado!';
+    submitIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7"/>';
+    submitBtn.disabled = true;
   });
 
   inicializar();
