@@ -10,12 +10,11 @@ const images = [
   '/img/maria-jose-8.webp',
   '/img/maria-jose-9.webp',
   '/img/maria-jose-10.webp',
-  '/img/maria-jose-11.webp',
 ];
 // Clonar la primera al final para que el loop sea seamless
 const slides = [...images, images[0]];
-const TOTAL = slides.length; // 12
-const REAL  = images.length; // 11
+const TOTAL = slides.length; // 11
+const REAL  = images.length; // 10
 ---
 
 <section class="px-6 py-6" data-purpose="gallery-highlight">
@@ -63,8 +62,8 @@ const REAL  = images.length; // 11
 <script>
   const strip  = document.getElementById('gallery-strip') as HTMLElement;
   const dots   = document.querySelectorAll<HTMLElement>('#gallery-dots button');
-  const REAL   = 11;
-  const TOTAL  = 12; // 11 + clon
+  const REAL   = 10;
+  const TOTAL  = 11; // 10 + clon
   const STEP   = 100 / TOTAL; // % por slide (11.11…%)
 
   let current   = 0;
@@ -126,4 +125,49 @@ const REAL  = images.length; // 11
       timer = window.setInterval(() => goTo(current + 1), 3500);
     });
   });
+
+  // ── Swipe / drag ──────────────────────────────────────────────
+  const container = strip.parentElement as HTMLElement;
+  const THRESHOLD = 40; // px mínimos para contar como swipe
+  let dragStart = 0;
+  let isDragging = false;
+
+  function resetTimer() {
+    clearInterval(timer);
+    timer = window.setInterval(() => goTo(current + 1), 3500);
+  }
+
+  function onDragStart(x: number) {
+    if (resetting) return;
+    dragStart = x;
+    isDragging = true;
+    strip.style.transition = 'none';
+  }
+
+  function onDragEnd(x: number) {
+    if (!isDragging) return;
+    isDragging = false;
+    const delta = dragStart - x;
+    if (Math.abs(delta) >= THRESHOLD) {
+      goTo(delta > 0
+        ? Math.min(current + 1, REAL)   // swipe izquierda → siguiente
+        : Math.max(current - 1, 0));     // swipe derecha  → anterior
+      resetTimer();
+    } else {
+      // Snap de vuelta si no llega al umbral
+      strip.style.transition = 'transform 300ms ease-out';
+      strip.style.transform  = `translateX(-${current * STEP}%)`;
+    }
+  }
+
+  // Touch
+  container.addEventListener('touchstart', (e) => onDragStart(e.touches[0].clientX), { passive: true });
+  container.addEventListener('touchend',   (e) => onDragEnd(e.changedTouches[0].clientX));
+
+  // Mouse (desktop)
+  container.addEventListener('mousedown', (e) => { e.preventDefault(); onDragStart(e.clientX); });
+  window.addEventListener('mouseup',   (e) => onDragEnd(e.clientX));
+  container.style.cursor = 'grab';
+  container.addEventListener('mousedown', () => { container.style.cursor = 'grabbing'; });
+  window.addEventListener('mouseup',      () => { container.style.cursor = 'grab'; });
 </script>
