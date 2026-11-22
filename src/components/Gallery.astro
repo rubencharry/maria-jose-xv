@@ -8,11 +8,14 @@ const images = [
   '/img/maria-jose-6.webp',
   '/img/maria-jose-7.webp',
   '/img/maria-jose-8.webp',
+  '/img/maria-jose-9.webp',
+  '/img/maria-jose-10.webp',
+  '/img/maria-jose-11.webp',
 ];
 // Clonar la primera al final para que el loop sea seamless
 const slides = [...images, images[0]];
-const TOTAL = slides.length; // 9
-const REAL  = images.length; // 8
+const TOTAL = slides.length; // 12
+const REAL  = images.length; // 11
 ---
 
 <section class="px-6 py-6" data-purpose="gallery-highlight">
@@ -60,8 +63,8 @@ const REAL  = images.length; // 8
 <script>
   const strip  = document.getElementById('gallery-strip') as HTMLElement;
   const dots   = document.querySelectorAll<HTMLElement>('#gallery-dots button');
-  const REAL   = 8;
-  const TOTAL  = 9; // 8 + clon
+  const REAL   = 11;
+  const TOTAL  = 12; // 11 + clon
   const STEP   = 100 / TOTAL; // % por slide (11.11…%)
 
   let current   = 0;
